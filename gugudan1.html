@@ -18,12 +18,21 @@
 </head>
 
 <body>
+  <input type="number" name="" id="input1"><br>
+  <button onclick="showGUGUDAN();">보여줘!!</button>
   <div id="result"></div>
 
   <script>
+  function showGUGUDAN() {
+
+    var num = Number(document.getElementById("input1").value);
+
     var text = "";
     var i, j;
     for (j = 2; j <= 9; j++) {
+      if (j === num) {
+        continue;
+      }
       text += "<div>";
       for (i = 1; i <= 9; i++) {
         text += j + " &times; " + i + " = " + (j * i) + "<br>";
@@ -33,6 +42,7 @@
     }
 
     document.getElementById("result").innerHTML = text;
+  }
   </script>
 </body>
 
