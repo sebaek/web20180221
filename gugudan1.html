@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+#result > div {
+  display: inline-block;
+  padding: 15px;
+  margin: 15px;
+  border: 1px solid black;
+
+}
+
+  </style>
+</head>
+<body>
+<div id="result"></div>
+
+<script>
+var text = "";
+var i, j;
+for (j = 2; j <= 9; j++) {
+  text += "<div>";
+  for (i = 1; i <= 9; i++) {
+    text += j + " &times; " + i + " = " + (j * i) + "<br>";
+  }
+  text += "</div>";
+
+}
+
+document.getElementById("result").innerHTML = text;
+</script>
+</body>
+</html>
