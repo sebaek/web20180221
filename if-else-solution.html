@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head></head>
+
+<body>
+  <input id="input1" type="text">
+  <br>
+  <button onclick="showGrade();">등급을 보여줘~!</button>
+  <p id="result"></p>
+  <script>
+    function showGrade() {
+      // 1. input 요소에 있는 value를 가져와서
+      //    변수에 저장함.
+      var point = Number(document.getElementById("input1").value);
+      var message = "";
+      // 2. 각 점수와 비교해서 적절한 메세지 출력
+      if (90 <= point && point <= 100) {
+        message = "A등급입니다.";
+      } else if (80 <= point && point < 90) {
+        message = "B등급입니다.";
+      } else if (70 <= point && point < 80) {
+        message = "C등급입니다.";
+      } else if (60 <= point && point < 70) {
+        message = "D등급입니다.";
+      } else if (0 <= point && point < 60) {
+        message = "F등급입니다.";
+      } else {
+        message = "0에서 100사이의 값을 넣어주세요.";
+      }
+
+      document.getElementById("result").innerHTML = message;
+
+    }
+  </script>
+</body>
+
+</html>
