@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+    $(function() {
+
+      // 문제1
+      var star1 = $("<div></div>");
+
+      for (var i = 0; i < 5; i++) {
+        for (var j = 0; j <= i; j++) {
+          star1.append("*");
+        }
+        star1.append("<br>");
+      }
+
+      $("body").append(star1);
+
+
+      // 문제2
+      var star2 = $("<div></div>");
+
+      for (var i = 0; i < 5; i++) {
+        for (var j = 0; j < (5-i); j++) {
+          star2.append("*");
+        }
+        star2.append("<br>");
+      }
+
+      $("body").append(star2);
+
+
+      // 문제3
+      var star3 = $("<div></div>");
+
+      for (var i = 0; i < 5; i++) {
+        for (var k = 0; k < (4-i); k++) {
+          star3.append("&nbsp;");
+        }
+
+        for (var j = 0; j <= i; j++) {
+          star3.append("*");
+        }
+        star3.append("<br>");
+      }
+
+      $("body").append(star3);
+
+
+      // 문제 4
+      var star4 = $("<div></div>");
+
+      for (var i = 0; i < 5; i++) {
+        for (var j = 0; j < (5-i); j++) {
+          star4.append("*");
+        }
+        star4.append("<br>");
+      }
+
+      star4.css("text-align", "right");
+
+      $("body").append(star4);
+
+      // 문제 5
+      var text5 = "문제5<br>";
+
+      for (var i = 0; i < 5; i++) {
+        for (var j = 0; j <= i; j++) {
+          text5 += "*";
+        }
+        text5 += "<br>";
+      }
+
+
+      document.getElementById("div5").innerHTML = text5;
+
+      // 문제 6
+      var text6 = "문제6<br>";
+
+      for (var i = 0; i < 5; i++) {
+        for (var k = 0; k < (4-i); k++) {
+          text6 += "&nbsp;";
+        }
+        for (var j = 0; j <= i; j++) {
+          text6 += "*";
+        }
+        text6 += "<br>";
+      }
+
+
+      document.getElementById("div6").innerHTML = text6;
+
+
+
+    });
+  </script>
+
+  <style>
+  div {
+    padding: 20px;
+    display: inline-block;
+    font-size: 18px;
+    font-family: monospace;
+  }
+
+  </style>
+
+  <title>Document</title>
+</head>
+<body>
+  <div id="div5"></div>
+  <div id="div6"></div>
+
+</body>
+</html>
