@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    window.onload = function() {
+      document.getElementById("myButton").onclick = getData;
+
+      function getData() {
+
+        var results = document.getElementById('results');
+        var r = new XMLHttpRequest();
+        r.open("GET", "http://www.filltext.com?rows=10&f={firstName}", true);
+        r.onreadystatechange = function() {
+          if (r.readyState != 4 || r.status != 200) return;
+          var data = JSON.parse(r.responseText);
+          for (i = 0; i < data.length; i++) {
+            results.innerHTML += '<li>' + data[i].f + '</li>'
+          }
+        };
+        r.send();
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <button id="myButton">보여줘</button><br>
+  <ul id="results"></ul>
+
+</body>
+
+</html>

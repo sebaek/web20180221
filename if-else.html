@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<body>
+  <p>점수를 넣으면 등급이 나오도록 작성해보세요.</p>
+  <p>90이상 100이하이면 A <br> 80이상 90미만이면 B <br> 70이상 80미만이면 C <br> 60이상 70미만이면 D <br> 0이상 60미만이면 F<br> 그 외의 값들은 올바른 값을 넣어달라는 메세지 출력</p>
+  <input type="text" name="" id="input1"><br>
+  <button onclick="showGrade();">등급은?</button>
+  <p id="result"></p>
+  <script>
+    function showGrade() {
+      var point = Number(document.getElementById("input1").value);
+      var grade = "";
+
+      if (isNaN(point)) {
+        grade = "올바른 값을 입력하세요.";
+      } else if (90 <= point && point <= 100) {
+        grade = "A등급입니다.";
+      } else if (80 <= point && point < 90) {
+        grade = "B등급입니다.";
+      } else if (70 <= point && point < 80) {
+        grade = "C등급입니다.";
+      } else if (60 <= point && point < 70) {
+        grade = "D등급입니다.";
+      } else if (0 <= point && point < 60) {
+        grade = "F등급입니다.";
+      } else {
+        grade = "0과 100사이의 값을 입력하세요.";
+      }
+
+      document.getElementById("result").innerHTML = grade;
+    }
+  </script>
+</body>
+
+</html>

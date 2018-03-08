@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <script>
+    $(function() {
+      $("#myButton").click(function() {
+        var url = "http://www.filltext.com/?callback=?";
+        $.getJSON(url, {
+            'rows': 5,
+            'fname': '{firstName}',
+            'lname': '{lastName}',
+            'tel': '{phone|format}',
+          })
+          .done(function(data) {
+            $.each(data, function(i, item) {
+              var html =
+                "<td>" + item.fname + "</td>" +
+                "<td>" + item.lname + "</td>" +
+                "<td>" + item.tel + "</td>";
+              $("<tr/>").html(html).appendTo("#records");
+            });
+          });
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <button id="myButton">보여줘</button>
+  <br>
+  <table id="records"></table>
+
+</body>
+
+</html>
