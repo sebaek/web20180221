@@ -1,0 +1,14 @@
+/d/.test("d");
+true
+/d/.test("ikeijdkjkj");
+true
+/^d/.test("ikeijdkjkj");
+false
+/d$/.test("oweiuriuwd");
+true
+/d$/.test("oweiuwdeir");
+false
+/^d.*g$/.test("oirdogoieur");
+false
+/^d.*g$/.test("dog");
+true
