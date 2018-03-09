@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(function() {
+    $("#mybtn1").click(function() {
+      var text = $("#myinput1").val();
+      if (/식빵/.test(text)) {
+        $("#result").text("비속어가 들어가면 안됩니다.");
+      } else {
+        $("#result").text("올바른 언어입니다.");
+      }
+    });
+  });
+
+  </script>
+</head>
+<body>
+  <input id="myinput1" type="text" name="" value=""><br>
+  <button id="mybtn1">확인</button>
+  <p id="result"></p>
+
+</body>
+</html>
